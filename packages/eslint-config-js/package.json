@@ -36,7 +36,10 @@
 		"!dist/*.tsbuildinfo"
 	],
 	"keywords": [
-		"eslint"
+		"eslint",
+		"lint",
+		"js",
+		"javascript"
 	],
 	"bugs": {
 		"url": "https://github.com/kludge-cs/utils/issues"
