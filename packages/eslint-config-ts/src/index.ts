@@ -10,6 +10,14 @@ export const eslintConfig = {
 		"plugin:@typescript-eslint/recommended"
 	],
 	rules: {
+		"curly": [
+			"error",
+			"multi"
+		],
+		"multiline-ternary": [
+			"error",
+			"always-multiline"
+		],
 		"@typescript-eslint/adjacent-overload-signatures": "error",
 		"@typescript-eslint/array-type": "off",
 		"@typescript-eslint/await-thenable": "off",
