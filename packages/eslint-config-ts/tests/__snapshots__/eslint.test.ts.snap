@@ -40,7 +40,13 @@ Object {
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/explicit-member-accessibility": "error",
     "@typescript-eslint/explicit-module-boundary-types": "off",
-    "@typescript-eslint/init-declarations": "error",
+    "@typescript-eslint/init-declarations": Array [
+      "error",
+      "never",
+      Object {
+        "ignoreForLoopInit": true,
+      },
+    ],
     "@typescript-eslint/member-ordering": Array [
       "error",
       Object {
@@ -109,6 +115,7 @@ Object {
       "error",
       "multi",
     ],
+    "init-declarations": "off",
     "multiline-ternary": Array [
       "error",
       "always-multiline",

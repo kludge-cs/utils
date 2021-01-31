@@ -18,6 +18,7 @@ export const eslintConfig = {
 			"error",
 			"always-multiline"
 		],
+		"init-declarations": "off",
 		"@typescript-eslint/adjacent-overload-signatures": "error",
 		"@typescript-eslint/array-type": "off",
 		"@typescript-eslint/await-thenable": "off",
@@ -45,7 +46,11 @@ export const eslintConfig = {
 		"@typescript-eslint/explicit-function-return-type": "off",
 		"@typescript-eslint/explicit-member-accessibility": "error",
 		"@typescript-eslint/explicit-module-boundary-types": "off",
-		"@typescript-eslint/init-declarations": "error",
+		"@typescript-eslint/init-declarations": [
+			"error",
+			"never",
+			{"ignoreForLoopInit": true}
+		],
 		"@typescript-eslint/member-ordering": [
 			"error",
 			{
