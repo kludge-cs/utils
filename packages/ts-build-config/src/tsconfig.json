@@ -23,7 +23,7 @@
 		"noImplicitReturns": true,
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
-		"outDir": "dist",
+		"outDir": "./dist",
 		"preserveConstEnums": true,
 		"pretty": true,
 		"removeComments": true,
@@ -34,5 +34,5 @@
 		"tsBuildInfoFile": "./dist/.tsbuildinfo",
 		"useDefineForClassFields": true
 	},
-	"include": ["src"]
+	"include": ["./src"]
 }
