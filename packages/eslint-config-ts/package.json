@@ -17,17 +17,15 @@
 	"homepage": "https://github.com/kludge-cs/utils/tree/master/packages/ts-eslint-config",
 	"scripts": {
 		"test": "jest",
-		"prelint": "yarn test && yarn build",
+		"prelint": "pnpm test && pnpm build",
 		"lint": "eslint src tests --ext ts --fix -c dist/index.js",
-		"build": "tsc -b src",
-		"prepare": "yarn build"
+		"build": "tsc -b src"
 	},
 	"peerDependencies": {
 		"@kludge-cs/eslint-config-js": "1.x",
 		"@typescript-eslint/eslint-plugin": "4.x",
 		"@typescript-eslint/parser": "4.x",
-		"eslint": "7.x",
-		"typescript": "4.x"
+		"eslint": "7.x"
 	},
 	"repository": {
 		"type": "git",
@@ -54,5 +52,8 @@
 	},
 	"dependencies": {
 		"@kludge-cs/eslint-config-js": "^1.0.2"
+	},
+	"devDependencies": {
+		"typescript": "^4.2.2"
 	}
 }
