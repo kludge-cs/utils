@@ -17,6 +17,7 @@ Object {
   "parserOptions": Object {
     "ecmaVersion": 6,
     "extraFileExtensions": Array [
+      ".json",
       ".mjs",
     ],
     "sourceType": "module",
@@ -172,7 +173,7 @@ Object {
     ],
     "multiline-ternary": Array [
       "error",
-      "never",
+      "always-multiline",
     ],
     "new-cap": "error",
     "new-parens": "error",
@@ -284,7 +285,7 @@ Object {
     ],
     "no-unreachable-loop": "error",
     "no-unused-expressions": "error",
-    "no-unused-vars": "off",
+    "no-unused-vars": "error",
     "no-use-before-define": "error",
     "no-useless-backreference": "error",
     "no-useless-call": "error",

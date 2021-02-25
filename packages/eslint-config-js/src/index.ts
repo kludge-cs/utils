@@ -10,7 +10,7 @@ export const eslintConfig = {
 	},
 	extends: ["eslint:recommended", "plugin:json/recommended"],
 	parserOptions: {
-		extraFileExtensions: [".mjs"],
+		extraFileExtensions: [".json", ".mjs"],
 		sourceType: "module",
 		ecmaVersion: 6
 	},
@@ -164,7 +164,7 @@ export const eslintConfig = {
 		],
 		"multiline-ternary": [
 			"error",
-			"never"
+			"always-multiline"
 		],
 		"new-cap": "error",
 		"new-parens": "error",
@@ -270,13 +270,11 @@ export const eslintConfig = {
 		"no-unmodified-loop-condition": "error",
 		"no-unneeded-ternary": [
 			"error",
-			{
-				"defaultAssignment": true
-			}
+			{"defaultAssignment": true}
 		],
 		"no-unreachable-loop": "error",
 		"no-unused-expressions": "error",
-		"no-unused-vars": "off",
+		"no-unused-vars": "error",
 		"no-use-before-define": "error",
 		"no-useless-backreference": "error",
 		"no-useless-call": "error",

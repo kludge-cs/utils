@@ -14,10 +14,6 @@ export const eslintConfig = {
 			"error",
 			"multi"
 		],
-		"multiline-ternary": [
-			"error",
-			"always-multiline"
-		],
 		"init-declarations": "off",
 		"@typescript-eslint/adjacent-overload-signatures": "error",
 		"@typescript-eslint/array-type": "off",
