@@ -80,6 +80,7 @@ jobs:
         run: |
           git config --global user.name 'Kludge Cyber Systems (CI)'
           git config --global user.email contact@kludge-cs.co.uk
+          git pull # needed to ensure correct versions
           ROOT=$(pwd)
           for package in $(ls packages); do
             echo "# Building ${package}..."
