@@ -10,7 +10,6 @@ Object {
   "parserOptions": Object {
     "ecmaVersion": 2020,
     "project": "./tsconfig.eslint.json",
-    "sourceType": "module",
   },
   "root": true,
   "rules": Object {
