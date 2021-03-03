@@ -1,5 +1,13 @@
 # @kludge-cs/eslint-config-ts
 
+## 1.0.7
+
+### Patch Changes
+
+- ed097b4: Fix release bundling
+- Updated dependencies [ed097b4]
+  - @kludge-cs/eslint-config-js@1.1.1
+
 ## 1.0.6
 
 ### Patch Changes
