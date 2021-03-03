@@ -1,0 +1,111 @@
+name: "CD: Release"
+on:
+  push:
+    branches:
+      - master
+jobs:
+  publish:
+    name: Publish
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [14]
+    steps:
+      - name: "[INIT] Checkout repository"
+        uses: actions/checkout@v2
+      - name: "[INIT] Setup Node.js ${{ matrix.node }}"
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node }}
+      - name: "[INIT] Install pnpm"
+        run: npm i -g pnpm
+      - name: "[INIT] Restore dependency cache"
+        id: cache-restore
+        uses: actions/cache@v2
+        with:
+          path: 
+          key: ${{ runner.os }}-node${{ matrix.node }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+      - name: "[INIT] Install dependencies [CACHED]"
+        if: ${{ steps.cache-restore.outputs.cache-hit }}
+        run: pnpm i --offline
+      - name: "[INIT] Install dependencies [FRESH]"
+        if: ${{ !steps.cache-restore.outputs.cache-hit }}
+        run: pnpm i --frozen-lockfile
+      - name: "[EXEC] Apply changesets"
+        run: |
+          git config --global user.name 'Kludge Cyber Systems (CI)'
+          git config --global user.email contact@kludge-cs.co.uk
+          pnpx changeset version
+          git add .
+          git commit -m "chore: apply latest changesets"
+          git push
+        - name: "[EXEC] Publish"
+          run: pnpm -r publish
+  name: build
+    name: Build
+    needs: release
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [14]
+    steps:
+      - name: "[INIT] Checkout repository"
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: "[INIT] Setup Node.js ${{ matrix.node }}"
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node }}
+      - name: "[INIT] Install pnpm"
+        run: npm i -g pnpm
+      - name: "[INIT] Restore dependency cache"
+        id: cache-restore
+        uses: actions/cache@v2
+        with:
+          path: 
+          key: ${{ runner.os }}-node${{ matrix.node }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+      - name: "[INIT] Install dependencies [CACHED]"
+        if: ${{ steps.cache-restore.outputs.cache-hit }}
+        run: pnpm i --offline
+      - name: "[INIT] Install dependencies [FRESH]"
+        if: ${{ !steps.cache-restore.outputs.cache-hit }}
+        run: pnpm i --frozen-lockfile
+      - name: "[EXEC] Update build branches"
+        run: |
+          git config --global user.name 'Kludge Cyber Systems (CI)'
+          git config --global user.email contact@kludge-cs.co.uk
+          ROOT=$(pwd)
+          for package in "./packages/*"; do
+            cd $ROOT/packages/$package
+            pnpm prebuild || true
+            if ! [[ $(pnpm build) ]]; then
+              echo "WARNING: Build failing on $package"
+              continue
+            fi
+            pnpm postbuild || true
+            mkdir $GITHUB_WORKSPACE/../transfer-$package
+            PACKAGE_VERSION=$(node -pe "require('package.json').version")
+            pnpm prepublishOnly || true
+            for file in $(npx npm-packlist); do
+              cp -r $file $GITHUB_WORKSPACE/../transfer-$package || true
+            done
+            if [[ $(git checkout build-$package) ]]; then
+              echo -e "# Using existing build for $package"
+              git restore --staged . || true
+            else
+              echo -e "# Creating orphan build for $package"
+              git rm --cached -r .
+              git commit --allow-empty -m 'chore: initial commit' || true
+            fi
+            git clean -fdx && git reset --hard HEAD
+            rm -rf ./* && cp -r $GITHUB_WORKSPACE/../transfer-$package/* ./
+            git add .
+            git commit -m "chore: build ${package}@v${PACKAGE_VERSION}" || true
+            git tag -f "${package}@v${PACKAGE_VERSION}"
+            git push --tags --set-upstream origin build-$package
+            git checkout master
+            git clean -fdx && git reset --hard HEAD
+          done
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

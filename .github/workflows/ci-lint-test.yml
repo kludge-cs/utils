@@ -1,0 +1,81 @@
+name: "CI: Lint & Test"
+on: [push, pull_request]
+jobs:
+  eslint:
+    name: Lint
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    strategy:
+      matrix:
+        node: [14]
+    steps:
+      - name: "[INIT] Checkout repository"
+        uses: actions/checkout@v2
+      - name: "[INIT] Install Node.js ${{ matrix.node }}"
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node }}
+      - name: "[INIT] Install pnpm"
+        run: npm i -g pnpm
+      - name: "[INIT] Restore dependency cache"
+        id: cache-restore
+        uses: actions/cache@v2
+        with:
+          path: 
+          key: ${{ runner.os }}-node${{ matrix.node }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+      - name: "[INIT] Install dependencies [CACHED]"
+        if: ${{ steps.cache-restore.outputs.cache-hit }}
+        run: pnpm i --offline
+      - name: "[INIT] Install dependencies [FRESH]"
+        if: ${{ !steps.cache-restore.outputs.cache-hit }}
+        run: pnpm i --frozen-lockfile
+      - name: "[EXEC] Lint"
+        run: pnpm -r lint
+      - name: "[EXEC] Push lint fixes" 
+        run: |
+          git config user.name 'Kludge Cyber Systems (CI)'
+          git config user.email contact@kludge-cs.co.uk
+          git add .
+          if git commit --no-verify -m 'style: apply lint'; then
+            if [[ '${{ github.head_ref }}' ]]; then
+              git push origin HEAD:${{ github.head_ref }}
+            else
+              git push
+            fi
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  test-cover:
+    name: Test
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    strategy:
+      matrix:
+        node: [12, 14, 15]
+    steps:
+      - name: "[INIT] Checkout repository"
+        uses: actions/checkout@v2
+      - name: "[INIT] Install Node.js ${{ matrix.node }}"
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node }}
+      - name: "[INIT] Install pnpm"
+        run: npm i -g pnpm
+      - name: "[INIT] Restore dependency cache"
+        id: cache-restore
+        uses: actions/cache@v2
+        with:
+          path: 
+          key: ${{ runner.os }}-node${{ matrix.node }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+      - name: "[INIT] Install dependencies [CACHED]"
+        if: ${{ steps.cache-restore.outputs.cache-hit }}
+        run: pnpm i --offline
+      - name: "[INIT] Install dependencies [FRESH]"
+        if: ${{ !steps.cache-restore.outputs.cache-hit }}
+        run: pnpm i --frozen-lockfile
+      - name: "[EXEC] Test"
+        run: pnpm -r test
