@@ -23,7 +23,7 @@ jobs:
         id: cache-restore
         uses: actions/cache@v2
         with:
-          path: 
+          path: ~/.pnpm-store
           key: ${{ runner.os }}-node${{ matrix.node }}-${{ hashFiles('**/pnpm-lock.yaml') }}
       - name: "[INIT] Install dependencies [CACHED]"
         if: ${{ steps.cache-restore.outputs.cache-hit }}
@@ -69,7 +69,7 @@ jobs:
         id: cache-restore
         uses: actions/cache@v2
         with:
-          path: 
+          path: ~/.pnpm-store
           key: ${{ runner.os }}-node${{ matrix.node }}-${{ hashFiles('**/pnpm-lock.yaml') }}
       - name: "[INIT] Install dependencies [CACHED]"
         if: ${{ steps.cache-restore.outputs.cache-hit }}

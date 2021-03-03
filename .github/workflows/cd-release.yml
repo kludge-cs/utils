@@ -23,7 +23,7 @@ jobs:
         id: cache-restore
         uses: actions/cache@v2
         with:
-          path: 
+          path: ~/.pnpm-store
           key: ${{ runner.os }}-node${{ matrix.node }}-${{ hashFiles('**/pnpm-lock.yaml') }}
       - name: "[INIT] Install dependencies [CACHED]"
         if: ${{ steps.cache-restore.outputs.cache-hit }}
@@ -39,11 +39,11 @@ jobs:
           git add .
           git commit -m "chore: apply latest changesets"
           git push
-        - name: "[EXEC] Publish"
-          run: pnpm -r publish
-  name: build
+      - name: "[EXEC] Publish"
+        run: pnpm -r publish
+  build:
     name: Build
-    needs: release
+    needs: publish
     runs-on: ubuntu-latest
     strategy:
       matrix:
