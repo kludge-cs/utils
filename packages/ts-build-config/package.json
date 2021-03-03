@@ -1,6 +1,6 @@
 {
 	"name": "@kludge-cs/ts-build-config",
-	"version": "1.0.4",
+	"version": "1.0.5",
 	"description": "TSC configuration for TypeScript based KCS projects",
 	"author": {
 		"name": "Nytelife26 (Tyler J. Russell)",
@@ -41,7 +41,7 @@
 		"access": "public"
 	},
 	"devDependencies": {
-		"@kludge-cs/eslint-config-ts": "workspace:^1.0.6",
+		"@kludge-cs/eslint-config-ts": "workspace:^1.0.7",
 		"@typescript-eslint/parser": "^4.15.2",
 		"eslint": "^7.20.0",
 		"eslint-plugin-json": "^2.1.2",
