@@ -81,9 +81,10 @@ jobs:
         run: |
           git config --global user.name 'Kludge Cyber Systems (CI)'
           git config --global user.email contact@kludge-cs.co.uk
-          git pull # needed to ensure correct versions
+          git pull --ff-only # needed to ensure correct versions
           ROOT=$(pwd)
           for package in $(ls packages); do
+            pnpm i --offline
             echo "# Building ${package}..."
             cd $ROOT/packages/$package
             pnpm prebuild || true
