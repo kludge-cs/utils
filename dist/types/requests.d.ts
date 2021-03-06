@@ -44,4 +44,3 @@ export interface ParsedInfo {
         user: string | null;
     };
 }
-//# sourceMappingURL=requests.d.ts.map

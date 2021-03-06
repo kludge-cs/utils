@@ -44,3 +44,4 @@ exports.changelogFunctions = {
     getDependencyReleaseLine: getDependencyReleaseLine,
     getReleaseLine: getReleaseLine
 };
+exports.default = exports.changelogFunctions;
