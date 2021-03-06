@@ -38,7 +38,7 @@
 		"access": "public"
 	},
 	"devDependencies": {
-		"@kludge-cs/eslint-config-ts": "workspace:^1.0.7",
+		"@kludge-cs/eslint-config-ts": "workspace:^1.0.8",
 		"@typescript-eslint/parser": "^4.15.2",
 		"eslint": "^7.20.0",
 		"eslint-plugin-json": "^2.1.2",

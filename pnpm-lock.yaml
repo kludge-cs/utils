@@ -57,7 +57,7 @@ importers:
     devDependencies:
       typescript: 4.2.3
     specifiers:
-      '@kludge-cs/eslint-config-js': ^1.1.1
+      '@kludge-cs/eslint-config-js': ^1.1.2
       typescript: ^4.2.3
   packages/ts-build-config:
     dependencies:
@@ -70,7 +70,7 @@ importers:
       fs-extra: 9.1.0
       typescript: 4.2.3
     specifiers:
-      '@kludge-cs/eslint-config-ts': workspace:^1.0.7
+      '@kludge-cs/eslint-config-ts': workspace:^1.0.8
       '@typescript-eslint/eslint-plugin': ^4.16.1
       '@typescript-eslint/parser': ^4.15.2
       eslint: ^7.20.0

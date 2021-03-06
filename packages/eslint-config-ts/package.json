@@ -1,6 +1,6 @@
 {
 	"name": "@kludge-cs/eslint-config-ts",
-	"version": "1.0.7",
+	"version": "1.0.8",
 	"description": "ESLint config for KCS TypeScript projects.",
 	"author": {
 		"name": "Nytelife26 (Tyler J. Russell)",
@@ -22,7 +22,7 @@
 		"build": "tsc -b src"
 	},
 	"peerDependencies": {
-		"@kludge-cs/eslint-config-js": "1.1.1",
+		"@kludge-cs/eslint-config-js": "1.1.2",
 		"@typescript-eslint/eslint-plugin": "4.x",
 		"@typescript-eslint/parser": "4.x",
 		"eslint": "7.x"
@@ -51,7 +51,7 @@
 		"access": "public"
 	},
 	"dependencies": {
-		"@kludge-cs/eslint-config-js": "^1.1.1"
+		"@kludge-cs/eslint-config-js": "^1.1.2"
 	},
 	"devDependencies": {
 		"typescript": "^4.2.3"
