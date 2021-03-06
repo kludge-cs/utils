@@ -36,7 +36,7 @@ jobs:
           git config --global user.name 'Kludge Cyber Systems (CI)'
           git config --global user.email contact@kludge-cs.co.uk
           pnpx changeset version
-          pnpm i -r
+          pnpm i -r --frozen-lockfile=false --force
           git add .
           git commit -m "chore: apply latest changesets" || true
           git push
