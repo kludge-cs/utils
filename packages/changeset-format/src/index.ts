@@ -60,3 +60,4 @@ export const changelogFunctions: ChangelogFunctions = {
 	getDependencyReleaseLine: getDependencyReleaseLine,
 	getReleaseLine: getReleaseLine
 };
+export default changelogFunctions;
