@@ -16,9 +16,6 @@
 		"prepublishOnly": "node scripts/prepublish.mjs",
 		"postpublish": "node scripts/postpublish.mjs"
 	},
-	"peerDependencies": {
-		"typescript": "4.x"
-	},
 	"files": [
 		"tsconfig.json"
 	],
@@ -45,7 +42,8 @@
 		"@typescript-eslint/parser": "^4.15.2",
 		"eslint": "^7.20.0",
 		"eslint-plugin-json": "^2.1.2",
-		"fs-extra": "^9.1.0"
+		"fs-extra": "^9.1.0",
+		"typescript": "^4.2.3"
 	},
 	"dependencies": {
 		"@typescript-eslint/eslint-plugin": "^4.16.1"
