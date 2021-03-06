@@ -1,5 +1,11 @@
 # @kludge-cs/changeset-format
 
+## 1.0.2
+
+### Patch Changes
+
+- 52668c2: Fix default exporting
+
 ## 1.0.1
 
 ### Patch Changes
