@@ -1,6 +1,6 @@
 {
 	"name": "@kludge-cs/eslint-config-js",
-	"version": "1.1.1",
+	"version": "1.1.2",
 	"description": "ESLint config for KCS JavaScript projects.",
 	"author": {
 		"name": "Nytelife26 (Tyler J. Russell)",
@@ -14,7 +14,7 @@
 		"import": "./dist/index.js",
 		"require": "./dist/index.js"
 	},
-	"homepage": "https://github.com/kludge-cs/utils/tree/master/packages/js-eslint-config",
+	"homepage": "https://github.com/kludge-cs/utils/tree/master/packages/eslint-config-js",
 	"scripts": {
 		"test": "jest",
 		"prelint": "pnpm test && pnpm build",
@@ -47,6 +47,6 @@
 		"access": "public"
 	},
 	"devDependencies": {
-		"typescript": "^4.2.2"
+		"typescript": "^4.2.3"
 	}
 }
