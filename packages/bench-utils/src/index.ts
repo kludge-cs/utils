@@ -1,7 +1,7 @@
 import type { Event, Suite } from "benchmark";
 
 export function CycleLogger(event: Event) {
-	console.log(`[${event.type.toUpperCase()}] ${event.target}`);
+	console.log(`[${event.type.toUpperCase()}] ${String(event.target)}`);
 }
 
 export function CompletionLogger(this: Suite) {
