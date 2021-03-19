@@ -68,14 +68,6 @@ importers:
     specifiers:
       '@kludge-cs/eslint-config-js': ^1.1.2
       typescript: ^4.2.3
-  packages/interpol:
-    dependencies:
-      '@kludge-cs/eslint-config-js': link:../eslint-config-js
-    devDependencies:
-      typescript: 4.2.3
-    specifiers:
-      '@kludge-cs/eslint-config-js': ^1.1.2
-      typescript: ^4.2.3
   packages/ts-build-config:
     dependencies:
       '@typescript-eslint/eslint-plugin': 4.16.1_265c29626b32ef1d789cbbc817b541df
