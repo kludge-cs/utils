@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CompletionLogger = exports.CycleLogger = void 0;
 function CycleLogger(event) {
-    console.log(`[${event.type.toUpperCase()}] ${event.target}`);
+    console.log(`[${event.type.toUpperCase()}] ${String(event.target)}`);
 }
 exports.CycleLogger = CycleLogger;
 function CompletionLogger() {
