@@ -4,7 +4,6 @@ export const eslintConfig: Linter.Config = {
 	root: true,
 	env: {
 		commonjs: true,
-		jest: true,
 		es6: true,
 		es2021: true,
 		node: true
