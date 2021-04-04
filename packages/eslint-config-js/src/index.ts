@@ -9,9 +9,9 @@ export const eslintConfig: Linter.Config = {
 		es2021: true,
 		node: true
 	},
-	extends: ["eslint:recommended", "plugin:json/recommended"],
+	extends: ["eslint:recommended"],
 	parserOptions: {
-		extraFileExtensions: [".json", ".mjs"],
+		extraFileExtensions: [".mjs"],
 		sourceType: "module",
 		ecmaVersion: 6
 	},
