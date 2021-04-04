@@ -349,5 +349,4 @@ export const eslintConfig: Linter.Config = {
 	}
 };
 
-module.exports = eslintConfig;
 export default eslintConfig;
