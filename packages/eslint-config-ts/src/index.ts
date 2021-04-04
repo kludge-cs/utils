@@ -1,4 +1,6 @@
-export const eslintConfig = {
+import type { Linter } from "eslint";
+
+export const eslintConfig: Linter.Config = {
 	root: true,
 	parser: "@typescript-eslint/parser",
 	parserOptions: {
@@ -114,5 +116,4 @@ export const eslintConfig = {
 	}
 };
 
-module.exports = eslintConfig;
 export default eslintConfig;
