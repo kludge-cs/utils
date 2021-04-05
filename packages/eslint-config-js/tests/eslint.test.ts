@@ -8,6 +8,7 @@ describe("ESLint Config", () => {
 	});
 
 	test("should pass for require", () => {
+		/* eslint-disable-next-line @typescript-eslint/no-var-requires */
 		expect(require("../src")).toStrictEqual(eslintConfig);
 	});
 });
