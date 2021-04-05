@@ -11,5 +11,5 @@ describe("ESLint Config", () => {
 	test("should match for require", () => {
 		/* eslint-disable-next-line @typescript-eslint/no-var-requires */
 		expect(require("../src")).toBe(eslintConfig);
-	});	
+	});
 });
