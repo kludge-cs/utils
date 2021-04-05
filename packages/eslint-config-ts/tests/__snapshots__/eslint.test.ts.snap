@@ -115,7 +115,31 @@ Object {
       "error",
       "multi",
     ],
-    "init-declarations": "off",
+    "node/no-missing-import": Array [
+      "error",
+      Object {
+        "tryExtensions": Array [
+          ".js",
+          ".json",
+          "./index.js",
+          ".ts",
+          "./index.ts",
+        ],
+      },
+    ],
+    "node/no-missing-require": Array [
+      "error",
+      Object {
+        "tryExtensions": Array [
+          ".js",
+          ".json",
+          "./index.js",
+          ".ts",
+          "./index.ts",
+        ],
+      },
+    ],
+    "node/no-unsupported-features/es-syntax": "off",
   },
 }
 `;

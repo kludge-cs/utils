@@ -1,6 +1,6 @@
 import type { Linter } from "eslint";
 
-export const eslintConfig: Linter.Config = {
+const eslintConfig: Linter.Config = {
 	root: true,
 	env: {
 		commonjs: true,
@@ -156,6 +156,26 @@ export const eslintConfig: Linter.Config = {
 		"new-cap": "error",
 		"new-parens": "error",
 		"newline-per-chained-call": "error",
+		"node/no-missing-import": [
+			"error",
+			{
+				"tryExtensions": [
+					".js",
+					".json",
+					"./index.js"
+				]
+			}
+		],
+		"node/no-missing-require": [
+			"error",
+			{
+				"tryExtensions": [
+					".js",
+					".json",
+					"./index.js"
+				]
+			}
+		],
 		"no-alert": "error",
 		"no-array-constructor": "error",
 		"no-await-in-loop": "error",
@@ -345,4 +365,4 @@ export const eslintConfig: Linter.Config = {
 	}
 };
 
-export default eslintConfig;
+export = eslintConfig;
