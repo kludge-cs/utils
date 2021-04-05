@@ -32,8 +32,10 @@ jobs:
         if: ${{ !steps.cache-restore.outputs.cache-hit }}
         run: pnpm i --frozen-lockfile
       - name: "[EXEC] Lint"
-        run: pnpm -r lint
-      - name: "[EXEC] Push lint fixes" 
+        run: |
+          pnpm -r build
+          pnpm -r lint
+      - name: "[EXEC] Push lint fixes"
         run: |
           git config user.name 'Kludge Cyber Systems (CI)'
           git config user.email contact@kludge-cs.co.uk
