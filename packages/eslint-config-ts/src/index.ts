@@ -16,7 +16,6 @@ export const eslintConfig: Linter.Config = {
 			"error",
 			"multi"
 		],
-		"init-declarations": "off",
 		"@typescript-eslint/adjacent-overload-signatures": "error",
 		"@typescript-eslint/array-type": "off",
 		"@typescript-eslint/await-thenable": "off",
