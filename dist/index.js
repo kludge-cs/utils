@@ -1,7 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.eslintConfig = void 0;
-exports.eslintConfig = {
+const eslintConfig = {
     root: true,
     parser: "@typescript-eslint/parser",
     parserOptions: {
@@ -17,7 +15,31 @@ exports.eslintConfig = {
             "error",
             "multi"
         ],
-        "init-declarations": "off",
+        "node/no-unsupported-features/es-syntax": "off",
+        "node/no-missing-import": [
+            "error",
+            {
+                "tryExtensions": [
+                    ".js",
+                    ".json",
+                    "./index.js",
+                    ".ts",
+                    "./index.ts"
+                ]
+            }
+        ],
+        "node/no-missing-require": [
+            "error",
+            {
+                "tryExtensions": [
+                    ".js",
+                    ".json",
+                    "./index.js",
+                    ".ts",
+                    "./index.ts"
+                ]
+            }
+        ],
         "@typescript-eslint/adjacent-overload-signatures": "error",
         "@typescript-eslint/array-type": "off",
         "@typescript-eslint/await-thenable": "off",
@@ -116,5 +138,4 @@ exports.eslintConfig = {
         "@typescript-eslint/unified-signatures": "error"
     }
 };
-module.exports = exports.eslintConfig;
-exports.default = exports.eslintConfig;
+module.exports = eslintConfig;
