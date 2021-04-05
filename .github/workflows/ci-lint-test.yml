@@ -1,5 +1,9 @@
 name: "CI: Lint & Test"
-on: [push, pull_request]
+on:
+  push:
+    paths: [packages]
+  pull_request:
+    paths: [packages]
 jobs:
   eslint:
     name: Lint
