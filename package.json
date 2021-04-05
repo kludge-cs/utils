@@ -1,6 +1,6 @@
 {
 	"name": "@kludge-cs/bench-utils",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "High speed interpolation library.",
 	"author": {
 		"name": "Nytelife26 (Tyler J. Russell)",
@@ -41,6 +41,10 @@
 	},
 	"devDependencies": {
 		"@types/benchmark": "^2.1.0",
+		"benchmark": "^2.1.4",
 		"typescript": "^4.2.3"
+	},
+	"peerDependencies": {
+		"benchmark": "2.x"
 	}
 }
