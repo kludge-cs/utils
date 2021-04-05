@@ -43,7 +43,7 @@ importers:
       typescript: 4.2.3
     specifiers:
       '@types/benchmark': ^2.1.0
-      benchmark: 2.x
+      benchmark: ^2.1.4
       typescript: ^4.2.3
   packages/changeset-format:
     dependencies:
