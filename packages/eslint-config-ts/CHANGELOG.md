@@ -1,5 +1,16 @@
 # @kludge-cs/eslint-config-ts
 
+## 2.0.0
+
+### Patch Changes
+
+- 62774bd: Delegate disabling `init-declarations` to `eslint-config-js`.
+  Remove deprecated core ESLint rules.
+  Remove `eslint-plugin-json` from `eslint-config-js`.
+  Add `eslint-plugin-node` as a stand-in for permanently removed rules.
+- Updated dependencies [62774bd]
+  - @kludge-cs/eslint-config-js@1.2.0
+
 ## 1.0.8
 
 ### Patch Changes
