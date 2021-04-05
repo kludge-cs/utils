@@ -11,6 +11,7 @@
 	"main": "tsconfig.json",
 	"homepage": "https://github.com/kludge-cs/utils/tree/master/packages/ts-build-config",
 	"scripts": {
+		"prelint": "pnpm -r build --filter '@kludge-cs/eslint-config-ts'",
 		"lint": "eslint scripts --ext mjs --fix",
 		"prebuild": "pnpm lint",
 		"prepublishOnly": "node scripts/prepublish.mjs",
