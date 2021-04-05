@@ -1,25 +1,18 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.eslintConfig = void 0;
-exports.eslintConfig = {
+const eslintConfig = {
     root: true,
     env: {
-        amd: true,
         commonjs: true,
-        jest: true,
         es6: true,
         es2021: true,
         node: true
     },
-    extends: ["eslint:recommended", "plugin:json/recommended"],
+    extends: ["eslint:recommended", "plugin:node/recommended"],
     parserOptions: {
-        extraFileExtensions: [".json", ".mjs"],
+        extraFileExtensions: [".mjs"],
         sourceType: "module",
         ecmaVersion: 6
     },
-    plugins: [
-        "json"
-    ],
     rules: {
         "accessor-pairs": "error",
         "array-bracket-newline": "off",
@@ -53,7 +46,6 @@ exports.eslintConfig = {
             "error",
             "1tbs"
         ],
-        "callback-return": "error",
         "camelcase": "error",
         "capitalized-comments": "off",
         "comma-dangle": "error",
@@ -108,24 +100,15 @@ exports.eslintConfig = {
         "getter-return": "error",
         "grouped-accessor-pairs": "error",
         "guard-for-in": "warn",
-        "handle-callback-err": "error",
-        "id-blacklist": "error",
-        "id-denylist": "error",
         "id-length": "error",
         "id-match": "error",
         "implicit-arrow-linebreak": "error",
         "indent": [
             "error",
             "tab",
-            {
-                "SwitchCase": 1
-            }
+            { "SwitchCase": 1 }
         ],
-        "indent-legacy": "off",
-        "init-declarations": [
-            "error",
-            "never"
-        ],
+        "init-declarations": "off",
         "jsx-quotes": "error",
         "key-spacing": "error",
         "keyword-spacing": [
@@ -141,10 +124,10 @@ exports.eslintConfig = {
             "unix"
         ],
         "lines-around-comment": "error",
-        "lines-around-directive": "error",
         "lines-between-class-members": [
             "error",
-            "always"
+            "always",
+            { "exceptAfterSingleLine": true }
         ],
         "max-classes-per-file": "error",
         "max-depth": "error",
@@ -171,15 +154,32 @@ exports.eslintConfig = {
         ],
         "new-cap": "error",
         "new-parens": "error",
-        "newline-after-var": "off",
-        "newline-before-return": "off",
         "newline-per-chained-call": "error",
+        "node/no-missing-import": [
+            "error",
+            {
+                "tryExtensions": [
+                    ".js",
+                    ".json",
+                    "./index.js"
+                ]
+            }
+        ],
+        "node/no-missing-require": [
+            "error",
+            {
+                "tryExtensions": [
+                    ".js",
+                    ".json",
+                    "./index.js"
+                ]
+            }
+        ],
         "no-alert": "error",
         "no-array-constructor": "error",
         "no-await-in-loop": "error",
         "no-async-promise-executor": "error",
         "no-bitwise": "error",
-        "no-buffer-constructor": "error",
         "no-caller": "error",
         "no-compare-neg-zero": "error",
         "no-cond-assign": "error",
@@ -187,9 +187,7 @@ exports.eslintConfig = {
         "no-console": "off",
         "no-constant-condition": [
             "error",
-            {
-                "checkLoops": false
-            }
+            { "checkLoops": false }
         ],
         "no-constructor-return": "error",
         "no-continue": "error",
@@ -199,7 +197,6 @@ exports.eslintConfig = {
         "no-duplicate-imports": "error",
         "no-else-return": "error",
         "no-empty-function": "error",
-        "no-eq-null": "error",
         "no-eval": "off",
         "no-extend-native": "error",
         "no-extra-bind": "error",
@@ -221,32 +218,24 @@ exports.eslintConfig = {
         "no-loss-of-precision": "error",
         "no-magic-numbers": "off",
         "no-mixed-operators": "error",
-        "no-mixed-requires": "error",
         "no-multi-assign": "error",
         "no-multi-spaces": "error",
         "no-multi-str": "error",
         "no-multiple-empty-lines": "error",
-        "no-native-reassign": "error",
         "no-negated-condition": "off",
-        "no-negated-in-lhs": "error",
         "no-nested-ternary": "error",
         "no-new": "error",
         "no-new-func": "error",
         "no-new-object": "error",
-        "no-new-require": "error",
         "no-new-wrappers": "error",
         "no-octal-escape": "error",
         "no-param-reassign": "error",
-        "no-path-concat": "error",
         "no-plusplus": "error",
-        "no-process-env": "off",
-        "no-process-exit": "off",
         "no-promise-executor-return": "error",
         "no-proto": "error",
         "no-restricted-exports": "error",
         "no-restricted-globals": "error",
         "no-restricted-imports": "error",
-        "no-restricted-modules": "error",
         "no-restricted-properties": "error",
         "no-restricted-syntax": "error",
         "no-return-assign": "error",
@@ -254,14 +243,10 @@ exports.eslintConfig = {
         "no-script-url": "error",
         "no-self-compare": "error",
         "no-sequences": "error",
-        "no-shadow": "off",
-        "no-spaced-func": "error",
-        "no-sync": "error",
+        "no-shadow": "error",
         "no-tabs": [
             "error",
-            {
-                "allowIndentationTabs": true
-            }
+            { "allowIndentationTabs": true }
         ],
         "no-template-curly-in-string": "warn",
         "no-ternary": "off",
@@ -276,6 +261,10 @@ exports.eslintConfig = {
             { "defaultAssignment": true }
         ],
         "no-unreachable-loop": "error",
+        "no-unsafe-negation": [
+            "error",
+            { "enforceForOrderingRelations": true }
+        ],
         "no-unused-expressions": "error",
         "no-unused-vars": "error",
         "no-use-before-define": "error",
@@ -318,7 +307,6 @@ exports.eslintConfig = {
         "prefer-numeric-literals": "error",
         "prefer-object-spread": "error",
         "prefer-promise-reject-errors": "error",
-        "prefer-reflect": "off",
         "prefer-regex-literals": "error",
         "prefer-rest-params": "error",
         "prefer-spread": "error",
@@ -331,7 +319,6 @@ exports.eslintConfig = {
         "radix": "error",
         "require-atomic-updates": "error",
         "require-await": "off",
-        "require-jsdoc": "off",
         "require-unicode-regexp": "off",
         "rest-spread-spacing": "error",
         "semi": "error",
@@ -366,7 +353,6 @@ exports.eslintConfig = {
             "error",
             "never"
         ],
-        "valid-jsdoc": "error",
         "vars-on-top": "error",
         "wrap-iife": "error",
         "wrap-regex": "off",
@@ -377,5 +363,4 @@ exports.eslintConfig = {
         ]
     }
 };
-module.exports = exports.eslintConfig;
-exports.default = exports.eslintConfig;
+module.exports = eslintConfig;
