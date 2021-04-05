@@ -1,4 +1,6 @@
-export const eslintConfig = {
+import type { Linter } from "eslint";
+
+const eslintConfig: Linter.Config = {
 	root: true,
 	parser: "@typescript-eslint/parser",
 	parserOptions: {
@@ -14,7 +16,31 @@ export const eslintConfig = {
 			"error",
 			"multi"
 		],
-		"init-declarations": "off",
+		"node/no-unsupported-features/es-syntax": "off",
+		"node/no-missing-import": [
+			"error",
+			{
+				"tryExtensions": [
+					".js",
+					".json",
+					"./index.js",
+					".ts",
+					"./index.ts"
+				]
+			}
+		],
+		"node/no-missing-require": [
+			"error",
+			{
+				"tryExtensions": [
+					".js",
+					".json",
+					"./index.js",
+					".ts",
+					"./index.ts"
+				]
+			}
+		],
 		"@typescript-eslint/adjacent-overload-signatures": "error",
 		"@typescript-eslint/array-type": "off",
 		"@typescript-eslint/await-thenable": "off",
@@ -114,5 +140,4 @@ export const eslintConfig = {
 	}
 };
 
-module.exports = eslintConfig;
-export default eslintConfig;
+export = eslintConfig;

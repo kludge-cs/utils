@@ -1,5 +1,8 @@
 name: "CI: Lint & Test"
-on: [push, pull_request]
+on:
+  push:
+    paths: [packages]
+  pull_request:
 jobs:
   eslint:
     name: Lint
@@ -32,8 +35,11 @@ jobs:
         if: ${{ !steps.cache-restore.outputs.cache-hit }}
         run: pnpm i --frozen-lockfile
       - name: "[EXEC] Lint"
-        run: pnpm -r lint
-      - name: "[EXEC] Push lint fixes" 
+        run: |
+          pnpm -r build
+          pnpm -r --no-bail lint
+      - name: "[EXEC] Push lint fixes"
+        if: always()
         run: |
           git config user.name 'Kludge Cyber Systems (CI)'
           git config user.email contact@kludge-cs.co.uk

@@ -1,6 +1,6 @@
 {
 	"extends": "../eslint-config-ts/dist/index.js",
 	"parserOptions": {
-		"extraFileExtensions": [".json", ".mjs"]
+		"project": "./tsconfig.eslint.json"
 	}
 }
