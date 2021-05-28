@@ -1,7 +1,12 @@
 name: "CI: Lint & Test"
 on:
   push:
+<<<<<<< HEAD
     paths: [packages]
+=======
+    paths:
+      - "packages/**/*"
+>>>>>>> 19b34c9 (ci: exclusively lint & test package changes)
   pull_request:
 jobs:
   eslint:
