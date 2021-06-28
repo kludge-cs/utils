@@ -47,8 +47,8 @@
 		"access": "public"
 	},
 	"devDependencies": {
-		"@changesets/types": "^3.3.0",
-		"typescript": "^4.2.3"
+		"@changesets/types": "^4.0.0",
+		"typescript": "^4.3.2"
 	},
 	"dependencies": {
 		"@helperdiscord/centra": "^2.0.4",
