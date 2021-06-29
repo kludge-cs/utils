@@ -304,7 +304,10 @@ Object {
     "object-property-newline": "off",
     "object-shorthand": Array [
       "error",
-      "never",
+      "properties",
+      Object {
+        "avoidQuotes": true,
+      },
     ],
     "one-var": "off",
     "one-var-declaration-per-line": "error",

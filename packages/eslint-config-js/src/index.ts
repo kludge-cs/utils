@@ -286,7 +286,8 @@ const eslintConfig: Linter.Config = {
 		"object-property-newline": "off",
 		"object-shorthand": [
 			"error",
-			"never"
+			"properties",
+			{"avoidQuotes": true}
 		],
 		"one-var": "off",
 		"one-var-declaration-per-line": "error",
