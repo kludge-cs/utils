@@ -1,6 +1,5 @@
 name: "CI: CodeQL Analysis"
 on:
-  push:
   pull_request:
 jobs:
   analyze:
