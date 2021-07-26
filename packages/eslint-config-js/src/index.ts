@@ -277,7 +277,10 @@ const eslintConfig: Linter.Config = {
 		"no-useless-rename": "error",
 		"no-useless-return": "error",
 		"no-var": "error",
-		"no-void": "error",
+		"no-void": [
+			"error",
+			{"allowAsStatement": true}
+		],
 		"no-warning-comments": "warn",
 		"no-whitespace-before-property": "error",
 		"nonblock-statement-body-position": "error",
