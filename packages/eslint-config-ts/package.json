@@ -16,9 +16,9 @@
 	},
 	"homepage": "https://github.com/kludge-cs/utils/tree/master/packages/eslint-config-ts",
 	"scripts": {
-		"test": "jest",
+		"test": "jest -o",
 		"prelint": "pnpm test && pnpm build",
-		"lint": "eslint src tests --ext ts --fix -c dist/index.js",
+		"lint": "lint-staged",
 		"build": "tsc -b src",
 		"postbuild": "gen-esm-wrapper . ./dist/index.mjs"
 	},
@@ -55,8 +55,11 @@
 		"@kludge-cs/eslint-config-js": "^1.2.0"
 	},
 	"devDependencies": {
-		"@types/eslint": "^7.2.13",
+		"@types/eslint": "^7.28.0",
 		"gen-esm-wrapper": "^1.1.2",
-		"typescript": "^4.3.4"
+		"typescript": "^4.3.5"
+	},
+	"lint-staged": {
+		"*.ts": "eslint --fix -c dist/index.js"
 	}
 }
