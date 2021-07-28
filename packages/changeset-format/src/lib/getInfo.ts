@@ -1,34 +1,26 @@
 import type {
-	BareRepositories,
+	BareRepos,
 	Commit,
+	PR,
 	ParsedInfo,
-	PullRequest,
-	Repository,
-	RequestData,
-	Response,
-	ResponseData
+	Repo,
+	ReqData,
+	Res,
+	ResData
 } from "../types/index";
 import DataLoader from "dataloader";
 import { buildQuery } from "./queries";
-import centra from "@helperdiscord/centra";
+import req from "petitio";
 
-const validRepoNameRegex = /^[\w.-]+\/[\w.-]+$/;
-
-async function RequestBatchProcess(
-	requests: readonly RequestData[]
+async function reqBatchProc(
+	requests: readonly ReqData[]
 ): Promise<Commit[]> {
-	const repos = requests.reduce((
-		collective: BareRepositories,
-		value: RequestData
-	): BareRepositories => {
-		(collective[value.repo]
-			? collective[value.repo]
-			: collective[value.repo] = []
-		).push(value.commit);
-		return collective;
+	const repos = requests.reduce((all: BareRepos, val: ReqData): BareRepos => {
+		(all[val.repo] ?? (all[val.repo] = [])).push(val.commit);
+		return all;
 	}, {});
 
-	const res: Response = await centra("https://api.github.com/graphql", "POST")
+	const res: Res = await req("https://api.github.com/graphql", "POST")
 		.header({Authorization: `Token ${process.env.GITHUB_TOKEN}`})
 		.body({query: buildQuery(repos)})
 		.json();
@@ -36,12 +28,11 @@ async function RequestBatchProcess(
 	const { data } = res;
 
 	const keys = Object.keys(data);
-
-	const cleaned: ResponseData = {};
+	const cleaned: ResData = {};
 	Object.keys(repos).forEach((repo, index) => {
-		const store: Repository = {};
+		const store: Repo = {};
 		Object.entries(data[keys[index]]).forEach(([hash, commit]) => {
-			store[hash.substring(1)] = commit;
+			store[hash] = commit;
 		});
 		cleaned[repo] = store;
 	});
@@ -49,41 +40,26 @@ async function RequestBatchProcess(
 	return requests.map(({ repo, commit }) => cleaned[repo][commit]);
 }
 
-const GHDataLoader = new DataLoader(RequestBatchProcess);
-
-function pullRequestSorter(pullA: PullRequest, pullB: PullRequest) {
-	if (!pullA.mergedAt && !pullB.mergedAt) return 0;
-	if (!pullA.mergedAt) return 1;
-	if (!pullB.mergedAt) return -1;
-	const aDate = new Date(pullA.mergedAt);
-	const bDate = new Date(pullB.mergedAt);
-	if (aDate > bDate) return 1;
-	if (aDate < bDate) return -1;
-	return 0;
-}
+const GHDataLoader = new DataLoader(reqBatchProc);
 
 export async function getInfo(
-	request: RequestData
+	request: ReqData
 ): Promise<ParsedInfo> {
-	if (!request.commit) throw new Error("Please pass a commit SHA.");
-	/* eslint-disable-next-line max-len */
-	if (!request.repo || !validRepoNameRegex.test(request.repo)) throw new Error("Please pass a repository in the form of scope/repo");
-
 	const data = await GHDataLoader.load(request);
-	const pullRequest = data.associatedPullRequests?.nodes?.length
-		? data.associatedPullRequests.nodes.sort(pullRequestSorter)[0]
-		: null;
-	const user = pullRequest?.author ?? data.author.user;
+	let pull: PR | null;
+	pull = data.associatedPullRequests.nodes[0];
+	pull = pull?.merged ? pull : null;
+	const user = pull?.author ?? data.author.user;
 
 	return {
 		user: user.login,
-		pull: pullRequest?.number ?? null,
+		pull: pull?.number ?? null,
 		links: {
 			commit: `[\`${request.commit}\`](${data.commitUrl})`,
-			pull: pullRequest
-				? `([#${pullRequest.number}](${pullRequest.url}))`
+			pull: pull
+				? `([#${pull.number}](${pull.url}))`
 				: null,
-			user: user ? `[[@${user.login}](${user.url})]` : null
+			user: `[[@${user.login}](${user.url})]`
 		}
 	};
 }

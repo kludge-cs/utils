@@ -1,13 +1,13 @@
-export type repo = string;
-export type commit = string;
+export type RepoID = string;
+export type CommitID = string;
 
-export interface RequestData {
-	commit: commit;
-	repo: repo;
+export interface ReqData {
+	commit: CommitID;
+	repo: RepoID;
 }
 
-export interface BareRepositories {
-  [key: string]: commit[];
+export interface BareRepos {
+  [key: string]: CommitID[];
 }
 
 export interface GitActor {
@@ -15,33 +15,33 @@ export interface GitActor {
 	url: string;
 }
 
-export interface PullRequest {
+export interface PR {
 	number: number;
 	url: string;
-	mergedAt: string | null;
+	merged: boolean;
 	author: GitActor;
 }
 
 export interface Commit {
-	commitUrl: commit;
+	commitUrl: CommitID;
 	associatedPullRequests: {
-		nodes: PullRequest[];
+		nodes: PR[];
 	};
 	author: {
 		user: GitActor;
 	};
 }
 
-export interface Repository {
+export interface Repo {
 	[key: string]: Commit;
 }
 
-export interface ResponseData {
-	[key: string]: Repository;
+export interface ResData {
+	[key: string]: Repo;
 }
 
-export interface Response {
-	data?: ResponseData;
+export interface Res {
+	data?: ResData;
 }
 
 export interface ParsedInfo {
