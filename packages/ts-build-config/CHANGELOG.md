@@ -1,5 +1,12 @@
 # @kludge-cs/ts-build-config
 
+## 2.0.1
+
+### Patch Changes
+
+- 50d9e36: Update dependencies.
+- 339d34f: Update dependencies.
+
 ## 2.0.0
 
 ### Major Changes

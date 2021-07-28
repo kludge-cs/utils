@@ -1,6 +1,6 @@
 {
 	"name": "@kludge-cs/changeset-format",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "Formatter for @changesets/cli used in KCS monorepos.",
 	"author": {
 		"name": "Kludge Cyber Systems",

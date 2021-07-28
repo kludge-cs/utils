@@ -1,6 +1,6 @@
 {
 	"name": "@kludge-cs/bench-utils",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "High speed interpolation library.",
 	"author": {
 		"name": "Kludge Cyber Systems",

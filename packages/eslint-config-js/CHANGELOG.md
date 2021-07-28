@@ -1,5 +1,17 @@
 # @kludge-cs/eslint-config-js
 
+## 1.3.0
+
+### Minor Changes
+
+- 9e07639: Allow object shorthand.
+- c6b6d4c: Allow void in statements to ignore side effects.
+
+### Patch Changes
+
+- 50d9e36: Update dependencies.
+- 339d34f: Update dependencies.
+
 ## 1.2.0
 
 ### Minor Changes
