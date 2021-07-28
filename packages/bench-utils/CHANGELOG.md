@@ -4,7 +4,6 @@
 
 ### Patch Changes
 
-- 50d9e36: Update dependencies.
 - 339d34f: Update dependencies.
 
 ## 1.0.1

@@ -1,6 +1,6 @@
 # @kludge-cs/eslint-config-ts
 
-## 3.0.0
+## 2.1.0
 
 ### Minor Changes
 
@@ -8,11 +8,6 @@
 
 ### Patch Changes
 
-- 50d9e36: Update dependencies.
-- 339d34f: Update dependencies.
-- Updated dependencies [50d9e36]
-- Updated dependencies [9e07639]
-- Updated dependencies [339d34f]
 - Updated dependencies [c6b6d4c]
   - @kludge-cs/eslint-config-js@1.3.0
 

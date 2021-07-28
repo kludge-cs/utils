@@ -4,7 +4,6 @@
 
 ### Patch Changes
 
-- 50d9e36: Update dependencies.
 - b7985e5: Improved performance with reduced request load and more efficient functions.
 - 339d34f: Update dependencies.
 
