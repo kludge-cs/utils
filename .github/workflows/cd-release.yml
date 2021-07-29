@@ -33,7 +33,7 @@ jobs:
       - name: "[EXEC] Apply changesets"
         run: |
           git config --global user.name 'Kludge Cyber Systems (CI)'
-          git config --global user.email contact@kludge-cs.co.uk
+          git config --global user.email contact@k-cs.co
           pnpx changeset version
           pnpm i -r --frozen-lockfile=false --force
           git add .
@@ -79,7 +79,7 @@ jobs:
       - name: "[EXEC] Update build branches"
         run: |
           git config --global user.name 'Kludge Cyber Systems (CI)'
-          git config --global user.email contact@kludge-cs.co.uk
+          git config --global user.email contact@k-cs.co
           git pull --ff-only # needed to ensure correct versions
           ROOT=$(pwd)
           for package in $(ls packages); do
