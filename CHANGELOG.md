@@ -1,5 +1,16 @@
 # @kludge-cs/eslint-config-ts
 
+## 2.1.0
+
+### Minor Changes
+
+- c6b6d4c: Allow void in statements to ignore side effects.
+
+### Patch Changes
+
+- Updated dependencies [c6b6d4c]
+  - @kludge-cs/eslint-config-js@1.3.0
+
 ## 2.0.0
 
 ### Patch Changes
