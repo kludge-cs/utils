@@ -116,7 +116,7 @@ jobs:
             pnpm postbuild || true
             pnpm postpublish || true
             git push --tags --set-upstream origin build-$package
-            git checkout master
+            git checkout main
             git clean -fdx && git reset --hard HEAD
           done
         env:
