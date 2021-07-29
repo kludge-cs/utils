@@ -1,4 +1,8 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-pnpm -r lint
+ARGS=""
+for pkg in $(git diff --staged --diff-filter=ACMR --name-only | sed -re "s/^packages[\/]((\w|-)+)([\/].*)?$/\1/" | uniq); do
+	ARGS="$ARGS --filter @kludge-cs/$pkg"
+done
+pnpm -r --parallel lint $ARGS
