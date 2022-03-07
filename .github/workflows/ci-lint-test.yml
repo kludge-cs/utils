@@ -16,7 +16,7 @@ jobs:
         node: [14]
     steps:
       - name: "[INIT] Checkout repository"
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: "[INIT] Install Node.js ${{ matrix.node }}"
         uses: actions/setup-node@v2
         with:
@@ -64,7 +64,7 @@ jobs:
         node: [12, 14, 15]
     steps:
       - name: "[INIT] Checkout repository"
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: "[INIT] Install Node.js ${{ matrix.node }}"
         uses: actions/setup-node@v2
         with:
