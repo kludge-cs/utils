@@ -1,3 +1,10 @@
-**/*.tsbuildinfo
+.tsbuildinfo
 node_modules
-packages/**/dist
+dist
+
+target
+.direnv/
+result/
+.envrc
+.pre-commit-config.yaml
+
