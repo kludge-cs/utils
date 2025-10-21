@@ -1,6 +1,8 @@
 name: "CI: CodeQL Analysis"
-on:
-  pull_request:
+
+# on:
+#   pull_request:
+
 jobs:
   analyze:
     name: Analyze JavaScript

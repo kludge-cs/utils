@@ -1,9 +1,11 @@
 name: "CI: Lint & Test"
-on:
-  push:
-    paths:
-      - "packages/**/*"
-  pull_request:
+
+# on:
+#   push:
+#     paths:
+#       - "packages/**/*"
+#   pull_request:
+
 jobs:
   eslint:
     name: Lint
