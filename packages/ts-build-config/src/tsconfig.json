@@ -1,34 +1,40 @@
 {
-	"compileOnSave": true,
-	"compilerOptions": {
-		"allowJs": true,
-		"allowSyntheticDefaultImports": true,
-		"allowUnreachableCode": false,
-		"alwaysStrict": true,
-		"checkJs": true,
-		"declaration": true,
-		"declarationMap": false,
-		"emitDecoratorMetadata": true,
-		"esModuleInterop": true,
-		"experimentalDecorators": true,
-		"forceConsistentCasingInFileNames": true,
-		"importHelpers": true,
-		"importsNotUsedAsValues": "error",
-		"incremental": true,
-		"lib": ["esnext"],
-		"module": "CommonJS",
-		"moduleResolution": "Node",
-		"newLine": "lf",
-		"noFallthroughCasesInSwitch": true,
-		"noImplicitReturns": true,
-		"noUnusedLocals": true,
-		"noUnusedParameters": true,
-		"preserveConstEnums": true,
-		"pretty": true,
-		"removeComments": true,
-		"resolveJsonModule": true,
-		"strict": true,
-		"target": "ES2020",
-		"useDefineForClassFields": true
-	}
+  "$schema": "https://json.schemastore.org/tsconfig.json",
+  "compilerOptions": {
+    "lib": ["ESNext"],
+    "target": "ES2020",
+    "module": "Node16",
+    "moduleResolution": "Node16",
+    "resolveJsonModule": true,
+    "verbatimModuleSyntax": true,
+
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "useUnknownInCatchVariables": true,
+
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "allowUnreachableCode": false,
+
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "removeComments": true,
+    "newLine": "lf",
+    "pretty": true,
+
+    "importHelpers": true,
+    "forceConsistentCasingInFileNames": true,
+
+    "incremental": true
+  }
 }

@@ -1,24 +1,10 @@
 {
   "name": "@kludge-cs/ts-build-config",
-  "version": "2.0.1",
-  "description": "TSC configuration for TypeScript based KCS projects",
-  "author": {
-    "name": "Nytelife26 (Tyler J. Russell)",
-    "email": "nytelife@protonmail.com",
-    "url": "https://github.com/Nytelife26"
-  },
+  "version": "3.0.1",
+  "description": "The TypeScript build configuration for all Kludge Cyber Systems projects",
+  "main": "src/tsconfig.json",
   "license": "MIT",
-  "main": "tsconfig.json",
   "homepage": "https://github.com/kludge-cs/utils/tree/master/packages/ts-build-config",
-  "scripts": {
-    "lint": "lint-staged",
-    "prebuild": "pnpm lint",
-    "prepublishOnly": "node scripts/prepublish.mjs",
-    "postpublish": "node scripts/postpublish.mjs"
-  },
-  "files": [
-    "tsconfig.json"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kludge-cs/utils.git",
@@ -27,22 +13,29 @@
   "bugs": {
     "url": "https://github.com/kludge-cs/utils/issues"
   },
+  "author": {
+    "name": "Kludge Cyber Systems",
+    "email": "contact@kludgecs.com",
+    "url": "https://github.com/kludge-cs"
+  },
+  "files": [
+    "src"
+  ],
+  "exports": {
+    ".": {
+      "types": "./src/tsconfig.json",
+      "import": "./src/tsconfig.json",
+      "require": "./src/tsconfig.json"
+    }
+  },
   "keywords": [
     "typescript",
-    "ts",
-    "tsc",
     "shareable",
-    "config"
+    "config",
+    "tsc",
+    "ts"
   ],
   "publishConfig": {
     "access": "public"
-  },
-  "devDependencies": {
-    "@typescript-eslint/parser": "^8.46.2",
-    "fs-extra": "^11.3.2",
-    "typescript": "^5.9.3"
-  },
-  "lint-staged": {
-    "*.mjs": "eslint --fix"
   }
 }
