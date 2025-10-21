@@ -1,60 +1,60 @@
 {
-	"name": "@kludge-cs/eslint-config-js",
-	"version": "1.3.0",
-	"description": "ESLint config for KCS JavaScript projects.",
-	"author": {
-		"name": "Kludge Cyber Systems",
-		"email": "contact@k-cs.co",
-		"url": "https://github.com/kludge-cs"
-	},
-	"license": "MIT",
-	"main": "dist/index.js",
-	"types": "dist/index.d.ts",
-	"exports": {
-		"import": "./dist/index.mjs",
-		"require": "./dist/index.js"
-	},
-	"homepage": "https://github.com/kludge-cs/utils/tree/master/packages/eslint-config-js",
-	"scripts": {
-		"test": "jest -o",
-		"prelint": "pnpm test && pnpm build",
-		"lint": "lint-staged",
-		"build": "tsc -b src",
-		"postbuild": "gen-esm-wrapper . ./dist/index.mjs"
-	},
-	"peerDependencies": {
-		"eslint": "7.x"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/kludge-cs/utils.git",
-		"directory": "packages/js-eslint-config"
-	},
-	"files": [
-		"dist",
-		"!dist/*.tsbuildinfo"
-	],
-	"keywords": [
-		"eslint",
-		"lint",
-		"js",
-		"javascript"
-	],
-	"bugs": {
-		"url": "https://github.com/kludge-cs/utils/issues"
-	},
-	"publishConfig": {
-		"access": "public"
-	},
-	"devDependencies": {
-		"@types/eslint": "^7.28.0",
-		"gen-esm-wrapper": "^1.1.2",
-		"typescript": "^4.3.5"
-	},
-	"dependencies": {
-		"eslint-plugin-node": "^11.1.0"
-	},
-	"lint-staged": {
-		"*.ts": "eslint --fix -c ../eslint-config-ts/dist/index.js"
-	}
+  "name": "@kludge-cs/eslint-config-js",
+  "version": "1.3.0",
+  "description": "ESLint config for KCS JavaScript projects.",
+  "author": {
+    "name": "Kludge Cyber Systems",
+    "email": "contact@k-cs.co",
+    "url": "https://github.com/kludge-cs"
+  },
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    "import": "./dist/index.mjs",
+    "require": "./dist/index.js"
+  },
+  "homepage": "https://github.com/kludge-cs/utils/tree/master/packages/eslint-config-js",
+  "scripts": {
+    "test": "jest -o",
+    "prelint": "pnpm test && pnpm build",
+    "lint": "lint-staged",
+    "build": "tsc -b src",
+    "postbuild": "gen-esm-wrapper . ./dist/index.mjs"
+  },
+  "peerDependencies": {
+    "eslint": "7.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kludge-cs/utils.git",
+    "directory": "packages/js-eslint-config"
+  },
+  "files": [
+    "dist",
+    "!dist/*.tsbuildinfo"
+  ],
+  "keywords": [
+    "eslint",
+    "lint",
+    "js",
+    "javascript"
+  ],
+  "bugs": {
+    "url": "https://github.com/kludge-cs/utils/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@types/eslint": "^9.6.1",
+    "gen-esm-wrapper": "^1.1.3",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "eslint-plugin-node": "^11.1.0"
+  },
+  "lint-staged": {
+    "*.ts": "eslint --fix -c ../eslint-config-ts/dist/index.js"
+  }
 }

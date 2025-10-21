@@ -1,45 +1,34 @@
 {
-	"name": "@kludge-cs/utils",
-	"version": "1.0.0",
-	"description": "Organization wide utilities for KCS.",
-	"main": "index.js",
-	"scripts": {
-		"clean": "rimraf packages/**/dist && rimraf packages/**/node_modules",
-		"prepare": "husky install"
-	},
-	"private": true,
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/kludge-cs/utils.git"
-	},
-	"author": {
-		"name": "Nytelife26 (Tyler J. Russell)",
-		"email": "t@k-cs.co",
-		"url": "https://github.com/Nytelife26"
-	},
-	"license": "MIT",
-	"devDependencies": {
-		"@changesets/cli": "^2.16.0",
-		"@commitlint/cli": "^13.1.0",
-		"@commitlint/config-conventional": "^13.1.0",
-		"@kludge-cs/changeset-format": "workspace:^1.0.2",
-		"@types/jest": "^26.0.24",
-		"@types/node": "^16.4.3",
-		"@typescript-eslint/eslint-plugin": "^4.28.5",
-		"@typescript-eslint/parser": "^4.28.5",
-		"cz-conventional-changelog": "^3.3.0",
-		"eslint": "^7.31.0",
-		"husky": "^7.0.0",
-		"jest": "^27.0.6",
-		"jest-circus": "^27.0.6",
-		"lint-staged": "^11.1.1",
-		"rimraf": "^3.0.2",
-		"ts-jest": "^27.0.4",
-		"ts-node": "^10.1.0",
-		"typescript": "^4.3.5"
-	},
-	"bugs": {
-		"url": "https://github.com/kludge-cs/utils/issues"
-	},
-	"homepage": "https://github.com/kludge-cs/utils#readme"
+  "name": "@kludge-cs/utils",
+  "version": "1.0.0",
+  "description": "Organization wide utilities for KCS",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "clean": "rm -rf packages/**/dist packages/**/node_modules"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kludge-cs/utils.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kludge-cs/utils/issues"
+  },
+  "homepage": "https://github.com/kludge-cs/utils#readme",
+  "author": {
+    "name": "Kludge Cyber Systems",
+    "email": "contact@kludgecs.com",
+    "url": "https://github.com/kludge-cs"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.9.1",
+    "@typescript-eslint/eslint-plugin": "^8.46.2",
+    "@typescript-eslint/parser": "^8.46.2",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^9.38.0",
+    "jest": "^30.2.0",
+    "jest-circus": "^30.2.0",
+    "typescript": "^5.9.3"
+  }
 }

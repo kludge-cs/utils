@@ -1,53 +1,53 @@
 {
-	"name": "@kludge-cs/bench-utils",
-	"version": "1.0.2",
-	"description": "High speed interpolation library.",
-	"author": {
-		"name": "Kludge Cyber Systems",
-		"email": "contact@k-cs.co",
-		"url": "https://github.com/kludge-cs"
-	},
-	"license": "MIT",
-	"main": "dist/index.js",
-	"types": "dist/index.d.ts",
-	"exports": {
-		"import": "./dist/index.js",
-		"require": "./dist/index.js"
-	},
-	"homepage": "https://github.com/kludge-cs/utils/tree/master/packages/bench-utils",
-	"scripts": {
-		"test": "jest",
-		"lint": "lint-staged",
-		"build": "tsc -b src"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/kludge-cs/utils.git",
-		"directory": "packages/bench-utils"
-	},
-	"files": [
-		"dist",
-		"!dist/*.tsbuildinfo"
-	],
-	"keywords": [
-		"typescript",
-		"ts"
-	],
-	"bugs": {
-		"url": "https://github.com/kludge-cs/utils/issues"
-	},
-	"publishConfig": {
-		"access": "public"
-	},
-	"devDependencies": {
-		"@types/benchmark": "^2.1.1",
-		"benchmark": "^2.1.4",
-		"typescript": "^4.3.5"
-	},
-	"peerDependencies": {
-		"benchmark": "2.x"
-	},
-	"lint-staged": {
-		"*.ts": "eslint --fix"
-	}
+  "name": "@kludge-cs/bench-utils",
+  "version": "1.0.2",
+  "description": "High speed interpolation library.",
+  "author": {
+    "name": "Kludge Cyber Systems",
+    "email": "contact@k-cs.co",
+    "url": "https://github.com/kludge-cs"
+  },
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    "import": "./dist/index.js",
+    "require": "./dist/index.js"
+  },
+  "homepage": "https://github.com/kludge-cs/utils/tree/master/packages/bench-utils",
+  "scripts": {
+    "test": "jest",
+    "lint": "lint-staged",
+    "build": "tsc -b src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kludge-cs/utils.git",
+    "directory": "packages/bench-utils"
+  },
+  "files": [
+    "dist",
+    "!dist/*.tsbuildinfo"
+  ],
+  "keywords": [
+    "typescript",
+    "ts"
+  ],
+  "bugs": {
+    "url": "https://github.com/kludge-cs/utils/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@types/benchmark": "^2.1.5",
+    "benchmark": "^2.1.4",
+    "typescript": "^5.9.3"
+  },
+  "peerDependencies": {
+    "benchmark": "2.x"
+  },
+  "lint-staged": {
+    "*.ts": "eslint --fix"
+  }
 }
