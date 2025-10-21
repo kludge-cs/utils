@@ -1,9 +1,22 @@
-# KCS Utilities
+# 🧰 Utils
 
-This is a repository containing monorepo-based packages for general KCS use.
-This description will be updated later, but for now, that is all.
+General-purpose packages and internal tooling
 
-## Licensing
+## 📦 Installation
 
-Unless otherwise specified on a per-package basis, all KCS utilities are
-licensed under the [MIT license](./.github/LICENSE).
+### pnpm
+
+```sh
+$ pnpm add @kludge-cs/package-name
+```
+
+## 🧩 Development
+
+```nix
+$ nix develop # If Nix
+$ pnpm i
+```
+
+## 🧾 Licensing
+
+Unless otherwise specified in individual packages, all utilities are licensed under the [MIT license](./LICENSE).
