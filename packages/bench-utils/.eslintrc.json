@@ -1,6 +1,0 @@
-{
-	"extends": "../eslint-config-ts/dist/index.js",
-	"parserOptions": {
-		"project": "./tsconfig.eslint.json"
-	}
-}
