@@ -9,7 +9,7 @@ like so:
 
 ```json
 {
-	"extends": "./tsconfig.json",
-	"include": ["src", "test"]
+  "extends": "./tsconfig.json",
+  "include": ["src", "test"]
 }
 ```

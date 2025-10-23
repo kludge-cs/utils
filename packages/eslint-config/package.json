@@ -1,0 +1,62 @@
+{
+  "name": "@kludge-cs/eslint-config",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "The ESLint configuration for all Kludge Cyber Systems JavaScript projects.",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "homepage": "https://github.com/kludge-cs/utils/tree/master/packages/eslint-config",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kludge-cs/utils.git",
+    "directory": "packages/eslint-config"
+  },
+  "bugs": {
+    "url": "https://github.com/kludge-cs/utils/issues"
+  },
+  "scripts": {
+    "build": "tsc -b src",
+    "lint": "eslint"
+  },
+  "author": {
+    "name": "Kludge Cyber Systems",
+    "email": "contact@kludgecs.com",
+    "url": "https://github.com/kludge-cs"
+  },
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    }
+  },
+  "keywords": [
+    "eslint",
+    "typescript",
+    "config",
+    "shareable",
+    "linter"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@eslint/js": "^9.38.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-n": "^17.23.1",
+    "typescript-eslint": "^8.46.2"
+  },
+  "peerDependencies": {
+    "eslint": "^9.0.0",
+    "typescript": "^5.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.38.0",
+    "eslint-import-resolver-typescript": "^3.6.3",
+    "prettier": "^3.6.2",
+    "typescript": "^5.9.3"
+  }
+}

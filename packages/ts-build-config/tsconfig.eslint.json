@@ -1,7 +1,0 @@
-{
-  "extends": "src/tsconfig.json",
-  "include": ["scripts"],
-  "compilerOptions": {
-    "module": "system"
-  }
-}
