@@ -1,15 +1,14 @@
-# @kludge-cs/ts-eslint-config
+# @kludge-cs/eslint-config
 
-ESLint configuration used in TypeScript based KCS projects.
+ESLint configuration used in JavaScript and TypeScript based KCS projects.
 
-Note that this also requires a `tsconfig.eslint.json` file to extend the base
-`tsconfig` for the package. The only thing this needs to have is an `include`
-directive, specifying the files and directories where linting is permitted,
-like so:
+## Usage
 
-```json
+TypeScript-based projects require a `tsconfig.eslint.json`.
+
+```jsonc
 {
   "extends": "./tsconfig.json",
-  "include": ["src", "test"]
+  "include": ["src", "test"],
 }
 ```
