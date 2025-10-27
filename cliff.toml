@@ -3,9 +3,7 @@ owner = "kludge-cs"
 repo = "utils"
 
 [changelog]
-header = """
-[![animation](https://raw.githubusercontent.com/orhun/git-cliff/main/website/static/img/git-cliff-anim.gif)](https://git-cliff.org)\n
-"""
+header = "Changelog"
 
 body = """
 {%- macro remote_url() -%}

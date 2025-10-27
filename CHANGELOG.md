@@ -1,4 +1,4 @@
-[![animation](https://raw.githubusercontent.com/orhun/git-cliff/main/website/static/img/git-cliff-anim.gif)](https://git-cliff.org)
+Changelog
 
 ## [unreleased]
 
@@ -9,6 +9,7 @@
 - _(eslint-config-_)\* Enable no-void allowAsStatements - ([c6b6d4c](https://github.com/kludge-cs/utils/commit/c6b6d4c5bd3eae1ad6d6c6021f63051ac6781b83))
 - _(eslint-config-js)_ Allow object shorthand - ([9e07639](https://github.com/kludge-cs/utils/commit/9e076392b1bfebac0338bc420173a15cb51d65e3))
 - _(eslint-config-ts)_ Fix init-declarations conflict - ([8c49afa](https://github.com/kludge-cs/utils/commit/8c49afae1bff3667e9039b9a96ae4a3e8d37bb73))
+- _(flake)_ Add git-cliff + changelog - ([8d4878e](https://github.com/kludge-cs/utils/commit/8d4878e0357533e9ffe6ac2a5d9765274cca50c9))
 - _(ts-build-config)_ Disable declaration mapping by default - ([bef536c](https://github.com/kludge-cs/utils/commit/bef536c788aa436e6bdf4f7d1298a1942402a48a))
 - _(ts-build-config)_ Add directory separation - ([2d52646](https://github.com/kludge-cs/utils/commit/2d52646b63caf3a2d8db99ec3615f3646b80dee3))
 - Allow multiline ternary - ([457936c](https://github.com/kludge-cs/utils/commit/457936c5de0e4cc493865da9c36d8481e821f1e8))
