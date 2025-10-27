@@ -3,7 +3,7 @@ owner = "kludge-cs"
 repo = "utils"
 
 [changelog]
-header = "Changelog"
+header = "# Changelog"
 
 body = """
 {%- macro remote_url() -%}

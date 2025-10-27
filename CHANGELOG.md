@@ -1,4 +1,4 @@
-Changelog
+# Changelog
 
 ## [unreleased]
 
@@ -49,6 +49,7 @@ Changelog
 - _(cd-release)_ Add npm authentication - ([4cea4a1](https://github.com/kludge-cs/utils/commit/4cea4a1fec5900d76ee1a4f3fc218e93a3c6e36a))
 - _(cd-release)_ Fix failing release when no changesets - ([90519fd](https://github.com/kludge-cs/utils/commit/90519fd5a6220ad6af3ea502a100e027a5f48db8))
 - _(changeset-format)_ Bump version - ([bc69083](https://github.com/kludge-cs/utils/commit/bc6908367d725651b8700fe2111557108ee13ba1))
+- _(cliff)_ Change header - ([c7c3b00](https://github.com/kludge-cs/utils/commit/c7c3b0012960a327a1494c2cb6994822caf579c2))
 - _(eslint-config-_)\* Fix package urls - ([7a58d4a](https://github.com/kludge-cs/utils/commit/7a58d4a725079e7d48063f007b1866155f633a64))
 - _(eslint-config-js)_ Readme - ([117b30d](https://github.com/kludge-cs/utils/commit/117b30d6d987937492dde4d31f7026f9f9c7e8f5))
 - _(lerna)_ Make lerna version independently - ([657ac69](https://github.com/kludge-cs/utils/commit/657ac69ebb66935ca230ea1b3f989b44499176fc))
