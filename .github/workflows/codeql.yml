@@ -1,0 +1,12 @@
+name: "CI: Code Analysis"
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  codeql:
+    uses: kludge-cs/.github/.github/workflows/reusable-codeql.yml@main
+    with:
+      languages: "javascript,typescript"
