@@ -30,5 +30,8 @@
     "jest-circus": "^30.2.0",
     "jiti": "^2.6.1",
     "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "git-cliff": "^2.10.1"
   }
 }

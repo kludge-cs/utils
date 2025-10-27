@@ -31,6 +31,7 @@
 
 							packages =
 								builtins.attrValues {
+									inherit (pkgs) git-cliff;
 									inherit (pkgs.nodePackages) nodejs pnpm typescript typescript-language-server;
 								}
 								++ self.checks.${system}.pre-commit.enabledPackages;
