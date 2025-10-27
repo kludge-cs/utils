@@ -9,4 +9,5 @@ jobs:
   codeql:
     uses: kludge-cs/.github/.github/workflows/reusable-codeql.yml@main
     with:
-      languages: javascript,typescript
+      language: javascript
+      build_mode: none
