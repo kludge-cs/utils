@@ -1,6 +1,6 @@
 {
 	inputs = {
-		nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+		nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
 		hooks = {
 			url = "github:cachix/git-hooks.nix";
 			inputs.nixpkgs.follows = "nixpkgs";
@@ -15,7 +15,7 @@
 		systems = ["x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin"];
 		forAllSystems = f:
 			nixpkgs.lib.genAttrs systems (system:
-					f rec {
+					f {
 						pkgs = nixpkgs.legacyPackages.${system};
 						inherit system;
 					});
@@ -46,6 +46,7 @@
 					pre-commit =
 						hooks.lib.${system}.run {
 							src = ./.;
+							package = pkgs.prek;
 
 							hooks = {
 								eslint = {
